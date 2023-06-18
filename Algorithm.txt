@@ -1,0 +1,14 @@
+Let's break down the code and explain its logic step by step:
+
+
+
+1. The `SELECT` statement selects the column `N` and uses the `IF` function to calculate the node type based on the following conditions:
+   - If `P` (parent) is `NULL`, it means the node is a root node. In this case, it assigns the node type as `'Root'`.
+   - If there is a record in the `BST` table where the parent (`P`) matches the current node (`B.N`), it means the node is an inner node. In this case, it assigns the node type as `'Inner'`.
+   - If none of the above conditions are met, it means the node is a leaf node. In this case, it assigns the node type as `'Leaf'`.
+
+2. The `FROM` clause specifies the table name as `BST` and uses the alias `B` to refer to the table.
+
+3. The `ORDER BY` clause sorts the result by the value of the node (`N`).
+
+The logic of the code is similar to the previous solution, but instead of using a subquery in the `CASE` statement, it uses the `IF` function to achieve the same result. The `IF` function checks the conditions and returns the corresponding node type accordingly.
