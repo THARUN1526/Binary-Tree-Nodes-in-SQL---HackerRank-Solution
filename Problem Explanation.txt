@@ -1,0 +1,16 @@
+This problem involves determining the node type (Root, Leaf, or Inner) for each node in a binary tree based on the given table representation. The table contains two columns, N and P, where N represents the value of a node, and P represents the parent of that node.
+
+To solve this problem, we can use a combination of SQL queries to identify the node type for each node. Here's the query to achieve this:
+
+
+Let's break down the query:
+
+1. The SELECT statement selects the columns N and the calculated column NodeType.
+2. In the CASE statement, we check the value of the parent (P) for each node:
+   - If P is NULL, it means the node is a root node, so we assign the NodeType as 'Root'.
+   - If the value of N exists in the list of distinct parents (P) from the BST table, it means the node is an inner node (neither root nor leaf), so we assign the NodeType as 'Inner'.
+   - Otherwise, if none of the above conditions are met, the node is a leaf node, and we assign the NodeType as 'Leaf'.
+3. The FROM clause specifies the table name as BST.
+4. Finally, we use the ORDER BY clause to sort the result by the value of the node (N).
+
+The output of the query will provide the node type for each node in the binary tree, ordered by the value of the node, as shown in the sample output provided in the question.
